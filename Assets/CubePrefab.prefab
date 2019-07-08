@@ -21,13 +21,13 @@ GameObject:
   - component: {fileID: 4531569503883578}
   - component: {fileID: 212978449706513674}
   - component: {fileID: 50116640232255642}
-  - component: {fileID: 58545830161878972}
   - component: {fileID: 61595778908770684}
   - component: {fileID: 114860303702359240}
   - component: {fileID: 82455674140007870}
+  - component: {fileID: 114466026707662850}
   m_Layer: 0
   m_Name: CubePrefab
-  m_TagString: Untagged
+  m_TagString: CubeTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,21 +65,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58545830161878972
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1108932555614082}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.99999994
 --- !u!61 &61595778908770684
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -185,6 +170,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114466026707662850
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1108932555614082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603a574932e7a3341957699cdd79feb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip:
+  - {fileID: 8300000, guid: e99c45071115fac419bd3aac80e472ef, type: 3}
 --- !u!114 &114860303702359240
 MonoBehaviour:
   m_ObjectHideFlags: 1

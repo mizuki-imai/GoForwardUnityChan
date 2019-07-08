@@ -23,19 +23,7 @@ public class CubeController : MonoBehaviour {
 		if (transform.position.x < this.deadLine){
 			Destroy (gameObject);
 		}
-	}
-
-	//トリガーモードで他のオブジェクトと接触した場合の処理
-	void OnTriggerEnter(Collider other){
-		//ユニティちゃんとぶつかったとき
-		if (other.gameObject.tag == "UnityChan2D") {
-			//ボリュームをゼロにする
-			GetComponent<AudioSource> ().volume = 0;
-		}
-		//ブロックや地面にぶつかったとき音を鳴らす。
-		if (other.gameObject.tag == "CubePrefab" || other.gameObject.tag == "ground") {
-			GetComponent<AudioSource> ().volume = 1;
-		}
+	
 	}
 
 }

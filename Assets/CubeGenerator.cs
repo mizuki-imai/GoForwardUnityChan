@@ -50,8 +50,14 @@ public class CubeGenerator : MonoBehaviour {
 				GameObject go = Instantiate (cubePrefab) as GameObject;
 				go.transform.position = new Vector2 (this.genPosX, this.offsetY + i * this.spaceY);
 			}
+
 			//次のキューブまでの生成時間を決める
 			this.span = this.offsetX + this.spaceX * n;
+
+			//生成したブロックの数+１回音を鳴らす
+			for (int i = 1; i < n; i++) {
+				GetComponent<AudioSource> ().volume = 1;
+			}
 	}
 }
 }
