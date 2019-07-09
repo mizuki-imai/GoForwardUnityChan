@@ -7,6 +7,7 @@ TagManager:
   - DamageObject
   - CubeTag
   - GroundTag
+  - UnityChan2DTag
   layers:
   - Default
   - TransparentFX

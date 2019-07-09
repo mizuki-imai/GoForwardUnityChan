@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour {
 	//ゲームオブジェクトを呼び出す
 	private GameObject CubeTag;
 	private GameObject GroundTag;
-	private GameObject UnityChan2D;
+	private GameObject UnityChan2DTag;
 
 	//オーディオクリップのしてい
 	AudioSource audioSource;
@@ -18,7 +18,7 @@ public class AudioController : MonoBehaviour {
 		//ゲームオブジェクトを取得
 		this.CubeTag = GameObject.Find("CubeTag");
 		this.GroundTag = GameObject.Find ("GroundTag");
-		this.UnityChan2D = GameObject.Find ("UnityChan2D");
+		this.UnityChan2DTag = GameObject.Find ("UnityChan2DTag");
 
 		audioSource = gameObject.AddComponent<AudioSource> ();
 
@@ -29,15 +29,16 @@ public class AudioController : MonoBehaviour {
 	void Update () {
 		}
 
-	//トリガーモードで他のオブジェクトと接触した場合の処理
+	//コライダーモードで他のオブジェクトと接触した場合の処理
 	void OnCollisionEnter2D(Collision2D coll){
 		//ブロックや地面にぶつかったとき音を鳴らす。
-		if (gameObject.tag == "CubeTag" || gameObject.tag == "GroundTag") {
+		if (coll.gameObject.tag == "CubeTag" || coll.gameObject.tag == "GroundTag") {
 			audioSource.PlayOneShot (audioClip [0]);
 		}
-		//ユニティちゃんとぶつかったときは音は鳴らさない
-		if (gameObject.tag == "UnityChan2D"){
+		//ユニティちゃんとぶつかったとき音を鳴らさない
+		if(coll.gameObject.tag == "UnityChan2DTag"){
 			GetComponent<AudioSource> ().volume = 0;
-	}
+		}
+
 }
 }
